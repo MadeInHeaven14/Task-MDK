@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1 MDK", "Task1 MDK\Task1 MDK.csproj", "{DF3FE00A-7AEE-4E0D-8F5B-750931A0FFA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2 MDK", "Task2 MDK\Task2 MDK.csproj", "{E813AA5B-A504-4B5C-94BA-D254A21D987D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task3 MDK", "Task3 MDK\Task3 MDK.csproj", "{854C751C-5B61-4BEF-8E81-E9C6A1625214}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF3FE00A-7AEE-4E0D-8F5B-750931A0FFA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF3FE00A-7AEE-4E0D-8F5B-750931A0FFA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF3FE00A-7AEE-4E0D-8F5B-750931A0FFA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF3FE00A-7AEE-4E0D-8F5B-750931A0FFA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E813AA5B-A504-4B5C-94BA-D254A21D987D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E813AA5B-A504-4B5C-94BA-D254A21D987D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E813AA5B-A504-4B5C-94BA-D254A21D987D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E813AA5B-A504-4B5C-94BA-D254A21D987D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{854C751C-5B61-4BEF-8E81-E9C6A1625214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{854C751C-5B61-4BEF-8E81-E9C6A1625214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{854C751C-5B61-4BEF-8E81-E9C6A1625214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{854C751C-5B61-4BEF-8E81-E9C6A1625214}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E619B28-66E7-43C6-8CA0-8605B26D1801}
+	EndGlobalSection
+EndGlobal
