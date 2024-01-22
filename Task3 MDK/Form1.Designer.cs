@@ -38,6 +38,7 @@
             this.tb_Min = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_Array = new System.Windows.Forms.TextBox();
+            this.btn_Clear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Sum
@@ -128,12 +129,25 @@
             this.tb_Array.Name = "tb_Array";
             this.tb_Array.Size = new System.Drawing.Size(172, 22);
             this.tb_Array.TabIndex = 9;
+            this.tb_Array.TextChanged += new System.EventHandler(this.tb_Array_TextChanged);
+            this.tb_Array.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Array_KeyPress);
+            // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Location = new System.Drawing.Point(37, 105);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(93, 23);
+            this.btn_Clear.TabIndex = 10;
+            this.btn_Clear.Text = "Очистить";
+            this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 450);
+            this.Controls.Add(this.btn_Clear);
             this.Controls.Add(this.tb_Array);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_Min);
@@ -163,6 +177,7 @@
         private System.Windows.Forms.TextBox tb_Min;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_Array;
+        private System.Windows.Forms.Button btn_Clear;
     }
 }
 

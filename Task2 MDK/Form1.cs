@@ -58,7 +58,14 @@ namespace Task2_MDK
             double value2 = Convert.ToDouble(tb_TotalTimeValue2.Text);
             double value3 = Convert.ToDouble(tb_TotalTimeValue3.Text);
 
-            tb_ChampionName.Text = CheckChampion(value1, value2, value3);
+            List<string> champions= CheckChampion(value1, value2, value3);
+
+            if (champions.Count == 1)
+                tb_ChampionName.Text = champions[0];
+            if(champions.Count == 2)
+                tb_ChampionName.Text = champions[0] + ", " + champions[1];
+            if (champions.Count == 3)
+                tb_ChampionName.Text = champions[0] + ", " + champions[1] + ", " + champions[2];
 
             btn_Restart.Enabled = true;
         }
@@ -75,22 +82,28 @@ namespace Task2_MDK
             return value;
         }
 
-        private string CheckChampion(double value1, double value2, double value3)
+        private List<string> CheckChampion(double value1, double value2, double value3)
         {
-            string champion = "";
-            if (value1 < value2 &&  value1 < value3) {
-                champion = "Андрей";
-            }
-            else if (value2 < value1 && value2 < value3)
+            List<string> champions = new List<string>();
+
+            double minValue = Math.Min(Math.Min(value1, value2), value3);
+
+            if (value1 == minValue)
             {
-                champion = "Егор";
-            }
-            else if (value3 < value1 && value3 < value1)
-            {
-                champion = "Михаил";
+                champions.Add("Андрей");
             }
 
-            return champion;
+            if (value2 == minValue)
+            {
+                champions.Add("Егор");
+            }
+
+            if (value3 == minValue)
+            {
+                champions.Add("Михаил");
+            }
+
+            return champions;
         }
 
         private bool IsValid()
@@ -111,6 +124,30 @@ namespace Task2_MDK
         private void btn_Restart_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void tb_SwimValue1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_SwimValue1_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            string text = textBox.Text;
+
+            if (text.StartsWith(","))
+                textBox.Text = text.Substring(1);
         }
     }
 }

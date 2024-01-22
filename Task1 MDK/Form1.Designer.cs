@@ -57,6 +57,7 @@
             this.tb_Name1.Name = "tb_Name1";
             this.tb_Name1.Size = new System.Drawing.Size(137, 22);
             this.tb_Name1.TabIndex = 1;
+            this.tb_Name1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Name1_KeyPress);
             // 
             // tb_Name2
             // 
@@ -64,6 +65,7 @@
             this.tb_Name2.Name = "tb_Name2";
             this.tb_Name2.Size = new System.Drawing.Size(137, 22);
             this.tb_Name2.TabIndex = 2;
+            this.tb_Name2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Name2_KeyPress);
             // 
             // tb_Name3
             // 
@@ -71,6 +73,7 @@
             this.tb_Name3.Name = "tb_Name3";
             this.tb_Name3.Size = new System.Drawing.Size(137, 22);
             this.tb_Name3.TabIndex = 3;
+            this.tb_Name3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Name3_KeyPress);
             // 
             // label2
             // 
@@ -87,6 +90,7 @@
             this.tb_Value1.Name = "tb_Value1";
             this.tb_Value1.Size = new System.Drawing.Size(137, 22);
             this.tb_Value1.TabIndex = 5;
+            this.tb_Value1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Value1_KeyPress);
             // 
             // tb_Value2
             // 
@@ -94,6 +98,7 @@
             this.tb_Value2.Name = "tb_Value2";
             this.tb_Value2.Size = new System.Drawing.Size(137, 22);
             this.tb_Value2.TabIndex = 6;
+            this.tb_Value2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Value2_KeyPress);
             // 
             // tb_Value3
             // 
@@ -101,6 +106,7 @@
             this.tb_Value3.Name = "tb_Value3";
             this.tb_Value3.Size = new System.Drawing.Size(137, 22);
             this.tb_Value3.TabIndex = 7;
+            this.tb_Value3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Value3_KeyPress);
             // 
             // btn_Sum
             // 

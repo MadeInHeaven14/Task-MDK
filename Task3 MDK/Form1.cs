@@ -26,10 +26,17 @@ namespace Task3_MDK
                 tb_Max.Text = null;
                 tb_Min.Text = null;
 
-                string[] numbers = tb_Array.Text.Split(' ');
-                int[] array = Array.ConvertAll(numbers, int.Parse);
+                try
+                {
+                    string[] numbers = tb_Array.Text.Split(' ');
+                    double[] array = Array.ConvertAll(numbers, double.Parse);
 
-                tb_Sum.Text = Sum(array).ToString();
+                    tb_Sum.Text = Sum(array).ToString();
+                }
+                catch
+                {
+                    MessageBox.Show("Неправильный формат введенного массива!");
+                }
             }
         }
 
@@ -41,10 +48,17 @@ namespace Task3_MDK
                 tb_Max.Text = null;
                 tb_Min.Text = null;
 
-                string[] numbers = tb_Array.Text.Split(' ');
-                int[] array = Array.ConvertAll(numbers, int.Parse);
+                try
+                {
+                    string[] numbers = tb_Array.Text.Split(' ');
+                    double[] array = Array.ConvertAll(numbers, double.Parse);
 
-                tb_Product.Text = Product(array).ToString();
+                    tb_Product.Text = Product(array).ToString();
+                }
+                catch
+                {
+                    MessageBox.Show("Неправильный формат введенного массива!");
+                }
             }
         }
 
@@ -56,10 +70,17 @@ namespace Task3_MDK
                 tb_Sum.Text = null;
                 tb_Min.Text = null;
 
-                string[] numbers = tb_Array.Text.Split(' ');
-                int[] array = Array.ConvertAll(numbers, int.Parse);
+                try
+                {
+                    string[] numbers = tb_Array.Text.Split(' ');
+                    double[] array = Array.ConvertAll(numbers, double.Parse);
 
-                tb_Max.Text = Max(array).ToString();
+                    tb_Max.Text = Max(array).ToString();
+                }
+                catch
+                {
+                    MessageBox.Show("Неправильный формат введенного массива!");
+                }
             }
         }
 
@@ -71,48 +92,88 @@ namespace Task3_MDK
                 tb_Max.Text = null;
                 tb_Sum.Text = null;
 
-                string[] numbers = tb_Array.Text.Split(' ');
-                int[] array = Array.ConvertAll(numbers, int.Parse);
+                try
+                {
+                    string[] numbers = tb_Array.Text.Split(' ');
+                    double[] array = Array.ConvertAll(numbers, double.Parse);
 
-                tb_Min.Text = Min(array).ToString();
+                    tb_Min.Text = Min(array).ToString();
+                }
+                catch
+                {
+                    MessageBox.Show("Неправильный формат введенного массива!");
+                }
             }
         }
 
-        private int Sum(int[] arr)
+        private double Sum(double[] arr)
         {
             int n = arr.Length;
-            int sum = 0;
+            double sum = 0;
             for (int i = 0; i < n; i++)
                 sum += arr[i];
             return sum;
         }
 
-        private int Product(int[] arr)
+        private double Product(double[] arr)
         {
             int n = arr.Length;
-            int prod = 1;
+            double prod = 1;
             for (int i = 0; i < n; i++)
                 prod *= arr[i];
             return prod;
 
         }
 
-        private int Max(int[] arr)
+        private double Max(double[] arr)
         {
             int n = arr.Length;
-            int max = int.MinValue;
+            double max = int.MinValue;
             for (int i = 0; i < n; i++)
                 if (arr[i] > max) max = arr[i];
             return max;
         }
 
-        private int Min(int[] arr)
+        private double Min(double[] arr)
         {
             int n = arr.Length;
-            int min = int.MaxValue;
+            double min = int.MaxValue;
             for (int i = 0; i < n; i++)
                 if (arr[i] < min) min = arr[i];
             return min;
+        }
+
+        private void tb_Array_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)&&
+        (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            /*if (*//*(e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1) || *//*(e.KeyChar == ' ') && ((sender as TextBox).Text.IndexOf(' ') > -1))
+            {
+                e.Handled = true;
+            }*/
+        }
+
+        private void tb_Array_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            string text = textBox.Text;
+
+            if (text.StartsWith(",") || text.StartsWith(" "))
+                textBox.Text = text.Substring(1);
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            tb_Array.Text = null;
+            tb_Sum.Text = null;
+            tb_Product.Text = null;
+            tb_Max.Text = null;
+            tb_Min.Text = null;
         }
     }
 }

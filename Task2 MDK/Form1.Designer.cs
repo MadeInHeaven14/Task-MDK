@@ -71,6 +71,8 @@
             this.tb_SwimValue1.Name = "tb_SwimValue1";
             this.tb_SwimValue1.Size = new System.Drawing.Size(82, 22);
             this.tb_SwimValue1.TabIndex = 1;
+            this.tb_SwimValue1.TextChanged += new System.EventHandler(this.tb_SwimValue1_TextChanged);
+            this.tb_SwimValue1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // tb_SwimValue2
             // 
@@ -78,6 +80,8 @@
             this.tb_SwimValue2.Name = "tb_SwimValue2";
             this.tb_SwimValue2.Size = new System.Drawing.Size(82, 22);
             this.tb_SwimValue2.TabIndex = 2;
+            this.tb_SwimValue2.TextChanged += new System.EventHandler(this.tb_SwimValue1_TextChanged);
+            this.tb_SwimValue2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // tb_SwimValue3
             // 
@@ -85,6 +89,8 @@
             this.tb_SwimValue3.Name = "tb_SwimValue3";
             this.tb_SwimValue3.Size = new System.Drawing.Size(82, 22);
             this.tb_SwimValue3.TabIndex = 3;
+            this.tb_SwimValue3.TextChanged += new System.EventHandler(this.tb_SwimValue1_TextChanged);
+            this.tb_SwimValue3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // tb_CycleValue1
             // 
@@ -92,6 +98,8 @@
             this.tb_CycleValue1.Name = "tb_CycleValue1";
             this.tb_CycleValue1.Size = new System.Drawing.Size(82, 22);
             this.tb_CycleValue1.TabIndex = 4;
+            this.tb_CycleValue1.TextChanged += new System.EventHandler(this.tb_SwimValue1_TextChanged);
+            this.tb_CycleValue1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // tb_CycleValue2
             // 
@@ -99,6 +107,8 @@
             this.tb_CycleValue2.Name = "tb_CycleValue2";
             this.tb_CycleValue2.Size = new System.Drawing.Size(82, 22);
             this.tb_CycleValue2.TabIndex = 5;
+            this.tb_CycleValue2.TextChanged += new System.EventHandler(this.tb_SwimValue1_TextChanged);
+            this.tb_CycleValue2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // tb_CycleValue3
             // 
@@ -106,6 +116,8 @@
             this.tb_CycleValue3.Name = "tb_CycleValue3";
             this.tb_CycleValue3.Size = new System.Drawing.Size(82, 22);
             this.tb_CycleValue3.TabIndex = 6;
+            this.tb_CycleValue3.TextChanged += new System.EventHandler(this.tb_SwimValue1_TextChanged);
+            this.tb_CycleValue3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // tb_RunValue1
             // 
@@ -113,6 +125,8 @@
             this.tb_RunValue1.Name = "tb_RunValue1";
             this.tb_RunValue1.Size = new System.Drawing.Size(82, 22);
             this.tb_RunValue1.TabIndex = 7;
+            this.tb_RunValue1.TextChanged += new System.EventHandler(this.tb_SwimValue1_TextChanged);
+            this.tb_RunValue1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // tb_RunValue2
             // 
@@ -120,6 +134,8 @@
             this.tb_RunValue2.Name = "tb_RunValue2";
             this.tb_RunValue2.Size = new System.Drawing.Size(82, 22);
             this.tb_RunValue2.TabIndex = 8;
+            this.tb_RunValue2.TextChanged += new System.EventHandler(this.tb_SwimValue1_TextChanged);
+            this.tb_RunValue2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // tb_RunValue3
             // 
@@ -127,6 +143,8 @@
             this.tb_RunValue3.Name = "tb_RunValue3";
             this.tb_RunValue3.Size = new System.Drawing.Size(82, 22);
             this.tb_RunValue3.TabIndex = 9;
+            this.tb_RunValue3.TextChanged += new System.EventHandler(this.tb_SwimValue1_TextChanged);
+            this.tb_RunValue3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // tb_TotalTimeValue1
             // 
@@ -135,6 +153,7 @@
             this.tb_TotalTimeValue1.ReadOnly = true;
             this.tb_TotalTimeValue1.Size = new System.Drawing.Size(82, 22);
             this.tb_TotalTimeValue1.TabIndex = 10;
+            this.tb_TotalTimeValue1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // tb_TotalTimeValue2
             // 
@@ -143,6 +162,7 @@
             this.tb_TotalTimeValue2.ReadOnly = true;
             this.tb_TotalTimeValue2.Size = new System.Drawing.Size(82, 22);
             this.tb_TotalTimeValue2.TabIndex = 11;
+            this.tb_TotalTimeValue2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // tb_TotalTimeValue3
             // 
@@ -151,6 +171,7 @@
             this.tb_TotalTimeValue3.ReadOnly = true;
             this.tb_TotalTimeValue3.Size = new System.Drawing.Size(82, 22);
             this.tb_TotalTimeValue3.TabIndex = 12;
+            this.tb_TotalTimeValue3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SwimValue1_KeyPress);
             // 
             // label2
             // 
@@ -250,7 +271,7 @@
             this.tb_ChampionName.Location = new System.Drawing.Point(530, 365);
             this.tb_ChampionName.Name = "tb_ChampionName";
             this.tb_ChampionName.ReadOnly = true;
-            this.tb_ChampionName.Size = new System.Drawing.Size(100, 22);
+            this.tb_ChampionName.Size = new System.Drawing.Size(162, 22);
             this.tb_ChampionName.TabIndex = 23;
             // 
             // btn_Restart
