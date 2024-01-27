@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Task2_MDK
 {
@@ -37,13 +38,28 @@ namespace Task2_MDK
                 double cycle3 = Convert.ToDouble(tb_CycleValue3.Text);
                 double run3 = Convert.ToDouble(tb_RunValue3.Text);
 
-                double time1 = FindTime(swim1, distance1) + ConvertHourToMin(FindTime(cycle1, distance2)) +
-                    ConvertHourToMin(FindTime(run1, distance3));
-                double time2 = FindTime(swim2, distance1) + ConvertHourToMin(FindTime(cycle2, distance2)) +
-                    ConvertHourToMin(FindTime(run2, distance3));
-                double time3 = FindTime(swim3, distance1) + ConvertHourToMin(FindTime(cycle3, distance2)) +
-                    ConvertHourToMin(FindTime(run3, distance3));
+                double time1 = 0;
+                double time2 = 0;
+                double time3 = 0;
 
+                if (swim1 != 0 && cycle1 != 0 && run1 != 0)
+                {
+                    time1 = FindTime(swim1, distance1) + ConvertHourToMin(FindTime(cycle1, distance2)) +
+                        ConvertHourToMin(FindTime(run1, distance3));
+                }
+                
+                if (swim2 != 0 && cycle2 != 0 && run2 != 0)
+                {
+                    time2 = FindTime(swim2, distance1) + ConvertHourToMin(FindTime(cycle2, distance2)) +
+                        ConvertHourToMin(FindTime(run2, distance3));
+                }
+                
+                if (swim3 != 0 && cycle3 != 0 && run3 != 0)
+                {
+                    time3 = FindTime(swim3, distance1) + ConvertHourToMin(FindTime(cycle3, distance2)) +
+                        ConvertHourToMin(FindTime(run3, distance3));
+                }
+                
                 tb_TotalTimeValue1.Text = time1.ToString();
                 tb_TotalTimeValue2.Text = time2.ToString();
                 tb_TotalTimeValue3.Text = time3.ToString();
@@ -72,7 +88,12 @@ namespace Task2_MDK
 
         private double FindTime(double value, double distance)
         {
-            double time = distance / value;
+            double time = 0;
+            if (value != 0)
+            {
+                time = distance / value;
+                
+            }
             return time;
         }
 
@@ -85,20 +106,29 @@ namespace Task2_MDK
         private List<string> CheckChampion(double value1, double value2, double value3)
         {
             List<string> champions = new List<string>();
+            List<double> values = new List<double>{ value1, value2, value3 };
+            double minValue = 0;
 
-            double minValue = Math.Min(Math.Min(value1, value2), value3);
+            foreach (var item in values.ToList())
+            {
+                if (item == 0)
+                    values.Remove(item);
+            }
 
-            if (value1 == minValue)
+            if (values.Count != 0)
+                minValue = values.Min();
+
+            if (value1 == minValue && minValue != 0)
             {
                 champions.Add("Андрей");
             }
 
-            if (value2 == minValue)
+            if (value2 == minValue && minValue != 0)
             {
                 champions.Add("Егор");
             }
 
-            if (value3 == minValue)
+            if (value3 == minValue && minValue != 0)
             {
                 champions.Add("Михаил");
             }
